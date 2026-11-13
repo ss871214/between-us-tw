@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f7f7f1" />
+  <meta name="description" content="認識你的衝突應對方式：十種動物角色、五種談判風格與兩種自我建構。" />
+  <title>Between Us｜衝突時，你是哪一種動物？</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="page-shell">
+    <header class="topbar" aria-label="網站導覽">
+      <button type="button" id="brand-btn" class="brand" aria-label="回到首頁">
+        <span class="brand-mark">✳</span>
+        <span>BETWEEN <span class="brand-em">US</span></span>
+      </button>
+      <span class="topbar-note">衝突性格測驗 · 台灣版 <span class="language-chip">繁體中文</span></span>
+    </header>
+
+    <main id="main">
+      <section class="screen home" id="screen-home" aria-labelledby="hero-title">
+        <div class="eyebrow"><span class="eyebrow-dot"></span> THE WAY WE CONNECT <span class="eyebrow-line"></span> 01 / TW</div>
+        <div class="hero-layout">
+          <div class="hero-copy">
+            <p class="overline">10 TYPES · 7 DIMENSIONS · ONE YOU</p>
+            <h1 id="hero-title">衝突時，<br />你是哪一種<span class="underline-sketch">動物</span>？</h1>
+            <p class="hero-description">有人習慣正面迎戰，有人先退一步；有人擅長協商，也有人努力守住關係。當意見不同，你會怎麼做？</p>
+            <div class="hero-actions">
+              <button id="start-btn" class="btn btn-primary btn-large" type="button">開始探索自己 <span aria-hidden="true">↗</span></button>
+              <span class="tiny-detail">21 題 · 1–7 分作答 · 無需註冊</span>
+            </div>
+            <p class="privacy-note">⌁ 目前為測試版：研究資料儲存尚未啟用，答案不會上傳。</p>
+          </div>
+          <div class="hero-art" aria-hidden="true">
+            <div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div>
+            <span class="art-star star-one">✳</span><span class="art-star star-two">✧</span><span class="art-star star-three">✦</span>
+            <span class="animal animal-fox">🦊</span><span class="animal animal-lion">🦁</span>
+            <span class="animal animal-owl">🦉</span><span class="animal animal-rabbit">🐰</span>
+            <span class="animal animal-swan">🦢</span><span class="animal animal-bear">🐻</span>
+            <span class="orbit-label top-label">YOUR INNER ATLAS</span><span class="orbit-label bottom-label">LEARN YOUR PATTERN</span>
+          </div>
+        </div>
+        <div class="quick-guide">
+          <div><span class="guide-index">01</span><strong>看見自己的衝突風格</strong><small>迴避、順應、妥協、解題、主張</small></div>
+          <div><span class="guide-index">02</span><strong>認識自己的自我建構</strong><small>獨立與互依可以同時很高</small></div>
+          <div><span class="guide-index">03</span><strong>解鎖你的動物角色</strong><small>角色稀有度與研究樣本比較</small></div>
+        </div>
+        <p class="notice home-notice"><strong>測試版本 v0.2</strong> 目前題目為原創示範題，尚未完成量表驗證。研究資料儲存預設關閉。結果是互動原型，不是心理診斷；與論文樣本的比較只適合測試介面與計算功能。</p>
+      </section>
+
+      <section class="screen quiz" id="screen-quiz" hidden aria-labelledby="question-title">
+        <div class="quiz-layout">
+          <div class="quiz-heading">
+            <div class="eyebrow"><span class="eyebrow-dot"></span> YOUR INNER ATLAS</div>
+            <h2>從你的直覺開始。</h2>
+            <p>想想你平常與別人意見不同時的反應，選擇最接近自己的答案。沒有標準答案。</p>
+          </div>
+          <div class="quiz-card">
+            <div class="progress-meta"><span id="progress-number">QUESTION 01 / 21</span><span id="progress-percent">5%</span></div>
+            <div class="progress-track"><div id="progress-bar" class="progress-fill"></div></div>
+            <p class="question-counter" id="question-counter">第 1 題</p>
+            <h3 id="question-title">題目載入中...</h3>
+            <div id="scale-options" class="scale-options" role="group" aria-label="同意程度：1 至 7 分"></div>
+            <div class="scale-ends"><span>非常不同意</span><span>非常同意</span></div>
+            <div class="quiz-footer">
+              <button id="back-btn" class="btn btn-quiet" type="button">← 上一題</button>
+              <span class="answer-state" id="answer-state" aria-live="polite">請選擇答案</span>
+              <button id="next-btn" class="btn btn-primary" type="button" disabled>下一題 →</button>
+            </div>
+          </div>
+          <p class="small-explain">小提示：在電腦上也可以直接按鍵盤的 1–7 作答。</p>
+        </div>
+      </section>
+
+
+      <!-- 完成問卷後的基本資料頁：姓名不會放進研究資料傳輸內容 -->
+      <section class="screen profile" id="screen-profile" hidden aria-labelledby="profile-title">
+        <div class="quiz-layout">
+          <div class="quiz-heading">
+            <div class="eyebrow"><span class="eyebrow-dot"></span> BEFORE YOUR RESULT</div>
+            <h2 id="profile-title">差一點點，就能認識你的角色。</h2>
+            <p>填寫基本資料，讓你的結果報告更個人化。研究資料的提供完全自願。</p>
+          </div>
+          <form class="quiz-card profile-card" id="profile-form">
+            <label class="form-label" for="profile-name">報告顯示的名字或暱稱 <span class="optional">選填</span></label>
+            <input id="profile-name" class="profile-input" type="text" maxlength="40" autocomplete="nickname" placeholder="例如：小虹" />
+            <p class="field-explain">只顯示在你自己的結果頁與自願複製的分享文字中，不上傳到研究資料庫。</p>
+
+            <div class="form-columns">
+              <div>
+                <label class="form-label" for="profile-age">年齡 <span class="optional">選填；同意研究用途時需填</span></label>
+                <input id="profile-age" class="profile-input" type="number" inputmode="numeric" min="1" max="120" placeholder="例如：27" />
+              </div>
+              <div>
+                <label class="form-label" for="profile-gender">性別認同 <span class="optional">選填</span></label>
+                <select id="profile-gender" class="profile-input">
+                  <option value="undisclosed">不透露</option>
+                  <option value="woman">女性</option>
+                  <option value="man">男性</option>
+                  <option value="nonbinary">非二元</option>
+                  <option value="other">其他</option>
+                </select>
+              </div>
+            </div>
+            <div class="consent-card">
+              <p class="form-label">研究資料使用同意 <span class="optional">自願</span></p>
+              <p class="field-explain">若你年滿 18 歲且同意，我們希望保留你的 21 題答案、七項計分、角色、年齡與性別認同，用於測驗品質分析與未來研究。<strong>姓名／暱稱不會儲存。</strong>不同意也能查看完整結果。</p>
+              <label class="check-label"><input id="research-consent" type="checkbox" /> <span>我已年滿 18 歲，並自願同意將上述資料提供研究用途。</span></label>
+              <p class="field-explain">目前是本機測試版；正式蒐集前需補齊研究負責人、聯絡方式、保留期間、撤回方式與隱私政策，並確認研究倫理程序。</p>
+              <p id="storage-preview" class="storage-preview" role="status">研究資料儲存尚未啟用，不會上傳答案。</p>
+            </div>
+            <p id="profile-error" class="form-error" aria-live="polite" hidden></p>
+            <div class="quiz-footer">
+              <button id="profile-back" type="button" class="btn btn-quiet">← 返回上一題</button>
+              <button id="profile-submit" class="btn btn-primary" type="submit">產生我的報告 ↗</button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <section class="screen results" id="screen-results" hidden aria-labelledby="result-title">
+        <div class="result-topline"><span class="eyebrow"><span class="eyebrow-dot"></span> YOUR CHARACTER IS HERE</span><span class="result-stamp">TAIWAN EDITION / V0.2</span></div>
+        <p id="report-personalization" class="personalized-greeting" hidden></p>
+        <div class="result-hero">
+          <div class="result-animal" id="result-animal" aria-hidden="true">🦊</div>
+          <div class="result-headline">
+            <p class="overline">YOUR NEGOTIATION CHARACTER</p>
+            <h1 id="result-title">你的角色</h1>
+            <p id="result-english" class="english-name"></p>
+            <p id="result-quote" class="result-quote"></p>
+            <p id="result-description" class="result-description"></p>
+          </div>
+        </div>
+        <div id="result-warning" class="notice" hidden></div>
+        <div class="result-grid">
+          <article class="panel rarity-panel">
+            <p class="panel-eyebrow">CHARACTER RARITY</p>
+            <h2>你的角色有多稀有？</h2>
+            <div class="rarity-stat" id="rarity-percent">—</div>
+            <div class="tier" id="rarity-tier">—</div>
+            <p id="rarity-text" class="muted"></p>
+            <div class="rarity-footnote">資料基準：台灣研究樣本 N = 131。這不是全台灣人口比例。</div>
+          </article>
+          <article class="panel traits-panel">
+            <p class="panel-eyebrow">YOUR CHARACTER NOTES</p>
+            <h2>你在衝突中的樣子</h2>
+            <div class="trait-block"><span class="trait-icon">✺</span><div><strong>你的優勢</strong><p id="role-strength"></p></div></div>
+            <div class="trait-block"><span class="trait-icon">◇</span><div><strong>可以留意的盲點</strong><p id="role-caution"></p></div></div>
+            <div class="trait-block"><span class="trait-icon">↗</span><div><strong>給你的提醒</strong><p id="role-advice"></p></div></div>
+          </article>
+          <article class="panel data-panel full-panel">
+            <div class="panel-head"><div><p class="panel-eyebrow">HOW YOU HANDLE CONFLICT</p><h2>你的五種談判風格</h2></div><span class="panel-tag">1–7 分量表</span></div>
+            <div id="style-chart" class="style-chart"></div>
+            <p class="small-explain">深綠色：你的示範問卷分數｜淺綠色：論文台灣樣本平均。下方百分比是相對平均差異，不是超越多少人的排名。</p>
+          </article>
+          <article class="panel self-panel full-panel">
+            <div class="panel-head"><div><p class="panel-eyebrow">HOW YOU SEE YOURSELF</p><h2>你的自我建構</h2></div><span class="panel-tag">Self-Construal</span></div>
+            <div id="self-scores" class="self-cards"></div>
+            <p class="small-explain">獨立與互依是兩個不同維度，可以同時很高。獨立自我建構也不等於完整的「主體性」概念。</p>
+          </article>
+        </div>
+        <div id="research-save-status" class="notice" role="status"></div>
+        <div class="research-disclaimer"><strong>關於這份結果</strong><p>本網站目前使用原創示範題目，未與論文使用的 DUTCH 和 Self-Construal 量表完成等值性驗證。因此角色分類與對研究樣本平均的比較，只是功能性示範；不能解讀為正式測量結果。稀有度是論文樣本按原研究資料計算的角色分布，不是所有玩家的分布，也不代表人口比例。</p></div>
+        <div class="result-actions"><button id="copy-btn" type="button" class="btn btn-primary">複製分享文字 ↗</button><button id="restart-btn" type="button" class="btn btn-outline">重新測驗 ↻</button><span id="copy-status" class="copy-status" role="status" aria-live="polite"></span></div>
+      </section>
+    </main>
+    <footer class="footer"><span>✳ BETWEEN US</span><span>MADE FOR UNDERSTANDING, NOT JUDGING.</span><span>PROTOTYPE · 2026</span></footer>
+  </div>
+  <script src="./reference.js"></script>
+  <script src="./data.js"></script>
+  <script src="./logic.js"></script>
+  <script src="./storage-config.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>
