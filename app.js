@@ -164,7 +164,7 @@
     if (!cfg.enabled || !cfg.endpoint) return '研究資料儲存尚未啟用：本次沒有上傳任何資料。';
     if (!/^https:\/\//.test(cfg.endpoint)) return '儲存端點設定錯誤，資料沒有上傳。';
     const submission = {
-      quiz_version: 'tw-demo-0.2', consent_version: 'draft-v0.2',
+      quiz_version: 'tw-demo-0.2', consent_version: 'tw-privacy-v1.2-2026-11-14',
       locale: 'zh-TW', consent: true, age, gender,
       answers: { ...answers }, scores: { ...result.scores }, role: result.role.id
       // 有意不加入 displayName：姓名只留在瀏覽器中，永不上傳。
