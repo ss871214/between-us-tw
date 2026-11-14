@@ -3,8 +3,8 @@ window.QUIZ_DATA = {
   title: 'Between Us｜衝突時，你是哪一種動物？',
   scaleLabels: {
     avoiding: '迴避',
-    accommodating: '順應',
-    compromising: '妥協',
+    accommodating: '妥協',
+    compromising: '折衷',
     problemSolving: '問題解決',
     forcing: '主張',
     independent: '獨立自我建構',
